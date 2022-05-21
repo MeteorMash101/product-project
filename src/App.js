@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment, useState } from 'react';
+import Header from './components/Layout/Header';
+import Jumbotron from './components/Layout/JumbotronComponent';
+import Products from './components/Products/Products.js';
+import Cart from './components/Cart/Cart.js'
+import CartProvider from './contexts/CartProvider.js';
 
 function App() {
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <CartProvider>
+        {cartIsShown && <Cart onClose={hideCartHandler}/>}
+        <Header onClick={showCartHandler}/>
+        <Jumbotron/>
+        <Products/>
+      </CartProvider>
+    </Fragment>
   );
 }
 

@@ -1,0 +1,58 @@
+.blueCard {
+    width: '5rem';
+    background: blue;
+    border-radius: 25px;
+    margin: 15px;
+    max-width: 20%;
+    max-height: 10%;
+}
+
+.redCard {
+    width: '5rem';
+    border-radius: 25px;
+    margin: 15px;
+    max-width: 20%;
+    max-height: 10%;
+    background: red;
+}
+
+.yellowCard {
+    width: '5rem';
+    border-radius: 25px;
+    margin: 15px;
+    max-width: 20%;
+    max-height: 10%;
+    background: yellow;
+}
+
+
+.greenCard {
+    width: '5rem';
+    border-radius: 25px;
+    margin: 15px;
+    max-width: 20%;
+    max-height: 10%;
+    background: green;
+}
+
+.cardTitle {
+    background-color: rgba(0, 0, 0, 0.904);
+    border-radius: 10px;
+    /* max-width: 200px; */
+    max-width: 45%;
+    align-items: center;
+    padding: 5px;
+    color: white;
+    display: inline
+}
+
+.price {
+    background-color: rgba(0, 0, 0, 0.904);
+    border-radius: 10px;
+    max-width: 35%;
+    align-items: center;
+    padding: 5px;
+    margin-left: 18%;
+    color: aquamarine;
+    display: inline
+}

@@ -1,0 +1,57 @@
+.button {
+  cursor: pointer;
+  font: inherit;
+  border: solid black;
+  background-color: #287583;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.button:hover,
+.button:active {
+  background-color: #074d57;
+}
+
+.icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: .8rem;
+}
+
+.badge {
+  background-color: #f197e5;
+  padding: 0.08rem 1rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.button:hover .badge,
+.button:active .badge {
+  background-color: #460b37;
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
