@@ -5,21 +5,28 @@ import classes from './ProductCard.module.css';
 import CartContext from '../../../contexts/cart-context';
 import ProductSpecs from './ProductSpecs.js';
 import MoreInfo from '../../Overlays/MoreInfo.js';
+import PriceContext from '../../../contexts/price-context';
 
 const ProductCard = (props) => {
 	const cartCtx = useContext(CartContext);
-	let colorClass = null;
-	if (props.color === "Red") {
-		colorClass = classes.redCard
-	}
-	else if (props.color === "Yellow") {
-		colorClass = classes.yellowCard
-	}
-	else if (props.color === "Blue") {
-		colorClass = classes.blueCard
-	}
-	else if (props.color === "Green") {
-		colorClass = classes.greenCard
+	const priceCtx = useContext(PriceContext);
+	let colorCSS = null;
+	switch (props.color) {
+		case "RED":
+			colorCSS = classes.redCard
+			break;
+		case "YELLOW":
+			colorCSS = classes.yellowCard
+			break;
+		case "BLUE":
+			colorCSS = classes.blueCard
+			break;
+		case "GREEN":
+			colorCSS = classes.greenCard
+			break;
+		default:
+			// safety, same as red.
+			colorCSS = classes.redCard
 	}
 
 	const addToCartHandler = () => {
@@ -27,7 +34,7 @@ const ProductCard = (props) => {
 		  id: props.id,
 		  name: props.name,
 		  amount: 1, // for now, default to 1 only.
-		  price: props.price
+		  price: priceCtx.colorToPrice.get(props.color)
 		});
 	};
 
@@ -43,12 +50,12 @@ const ProductCard = (props) => {
 	return (
 		<Fragment>
 			{infoIsShown && <MoreInfo onClose={hideInfoHandler}/>}
-			<Card text='white' className={colorClass}>
-			<Card.Img variant="top" src={productLogo} />
+			<Card text='white' className={colorCSS}>
+			<Card.Img variant="top" src={productLogo}/>
 			<Card.Body>
-				<Card.Title> <ProductSpecs name={props.name} price={props.price}/> </Card.Title>
+				<Card.Title> <ProductSpecs name={props.name} color={props.color}/> </Card.Title>
 				<Button variant="dark" onClick={showInfoHandler} color={props.color}>More Info</Button>
-				<Button variant="success" style={{margin: 4}} onClick={addToCartHandler}> Add To Cart</Button>
+				<Button variant="success" style={{margin: 4}} onClick={addToCartHandler}>Add To Cart</Button>
 			</Card.Body>
 			</Card>
 		</Fragment>

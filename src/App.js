@@ -3,7 +3,6 @@ import Header from './components/Layout/Header';
 import Jumbotron from './components/Layout/JumbotronComponent';
 import Products from './components/Products/Products.js';
 import Cart from './components/Cart/Cart.js'
-import CartProvider from './contexts/CartProvider.js';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -16,6 +15,7 @@ function App() {
     setCartIsShown(false);
   };
 
+  // EDIT: have this dismiss itself w/ in a few seconds
   const [hideJumbotron, setHideJumbotron] = useState(false);
 
   const hideJumbotronHandler = () => {
@@ -24,12 +24,10 @@ function App() {
 
   return (
     <Fragment>
-      <CartProvider>
         {cartIsShown && <Cart onClose={hideCartHandler}/>}
         <Header onClick={showCartHandler}/>
         {!hideJumbotron && <Jumbotron onClick={hideJumbotronHandler}/>}
         <Products/>
-      </CartProvider>
     </Fragment>
   );
 }

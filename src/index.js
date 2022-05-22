@@ -2,9 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import CartProvider from './contexts/CartProvider.js';
+import PriceProvider from './contexts/PriceProvider.js'
+
 
 ReactDOM.render(
-    <App />,
+  <CartProvider>
+    <PriceProvider>
+      <App />
+    </PriceProvider>
+  </CartProvider>,
   document.getElementById('root')
 );
 

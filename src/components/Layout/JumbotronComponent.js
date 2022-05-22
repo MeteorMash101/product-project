@@ -28,7 +28,7 @@ const JumbotronComponent = (props) => {
                 <p>Millions of customers rely on our robust, payment testing services to jumpstart their businesses.</p>
                 <p className="lead">
                     <Button className={classes.buttons} id={classes.learnMore} variant="primary" onClick={showInfoHandler}>Learn More</Button>
-                    <Button className={classes.buttons} id={classes.minimize} variant="warning" onClick={hideJumbotronHandler}>Minimize</Button>
+                    <Button className={classes.buttons} id={classes.dismiss} variant="warning" onClick={hideJumbotronHandler}>Dismiss</Button>
                 </p>
             </Jumbotron>
         </Container>
