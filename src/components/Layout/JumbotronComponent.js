@@ -5,7 +5,6 @@ import LearnMore from '../Overlays/LearnMore.js';
 
 
 const JumbotronComponent = (props) => {
-    
     // for displaying "Learn More" overlay, or not...
     const [infoIsShown, setInfoIsShown] = useState(false);
     const showInfoHandler = () => {
@@ -15,16 +14,21 @@ const JumbotronComponent = (props) => {
         setInfoIsShown(false);
     };
 
+    const hideJumbotronHandler = () => {
+        props.onClick();
+    };
+
     return (
         <Container>
             <Jumbotron className={classes.jumbotron}>
                 {infoIsShown && <LearnMore onClose={hideInfoHandler}/>}
-                <h1 className="display-3">Welcome to our product services!</h1>
-                <p className="lead">Millions of users and companies rely on our tightly knit product service line that produces the best products for every product out there</p>
+                <h1 className="display-3">Welcome to product payments services!</h1>
+                {/* <p className="lead">Our mission is to delivery the highest, quality service through our online commerce production</p> */}
                 <hr className="my-2" />
-                <p>Our mission is to delivery the highest, quality service through our online commerce production</p>
+                <p>Millions of customers rely on our robust, payment testing services to jumpstart their businesses.</p>
                 <p className="lead">
-                    <Button color="primary" onClick={showInfoHandler}>Learn More</Button>
+                    <Button className={classes.buttons} id={classes.learnMore} variant="primary" onClick={showInfoHandler}>Learn More</Button>
+                    <Button className={classes.buttons} id={classes.minimize} variant="warning" onClick={hideJumbotronHandler}>Minimize</Button>
                 </p>
             </Jumbotron>
         </Container>

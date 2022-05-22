@@ -4,5 +4,22 @@
     /* border-style: dotted; */
     border-radius: 20px;
     margin-top: 30px;
-    padding: 5%;
+    padding: 5% 5%;
+    /* height: 320px; */
+}
+
+.buttons {
+    margin: .2rem .2rem;
+}
+
+#learnMore {
+    border: 2px solid rgb(14, 14, 14);
+    background-color: rgb(122, 214, 221);
+    color: rgb(3, 60, 65);
+}
+
+#minimize {
+    border: 2px solid rgb(14, 14, 14);
+    background-color: rgb(234, 234, 139);
+    color: rgb(72, 72, 0);
 }

@@ -6,30 +6,28 @@ const Header = (props) => {
   return (
 			<Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
 				<Container>
-				<Navbar.Brand href="#home">Product Website</Navbar.Brand>
+				<Navbar.Brand href="/">Product Payments</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="me-auto">
-						<Nav.Link href="#features">Features</Nav.Link>
-						<Nav.Link href="#pricing">Pricing</Nav.Link>
-						<NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-							<NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-							<NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-							<NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-							<NavDropdown.Divider />
-							<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+						<NavDropdown title="Edit Prices" id="collasible-nav-dropdown">
+							<NavDropdown.Item>Red: </NavDropdown.Item>
+							<NavDropdown.Item>Green: </NavDropdown.Item>
+							<NavDropdown.Item>Blue: </NavDropdown.Item>
+							<NavDropdown.Divider/>
+							<NavDropdown.Item>Set Default</NavDropdown.Item>
+						</NavDropdown>
+						<NavDropdown title="Select Payment API" id="collasible-nav-dropdown">
+							<NavDropdown.Item>Stripe</NavDropdown.Item>
+							<NavDropdown.Item>PayPal</NavDropdown.Item>
+							<NavDropdown.Item>JPMorgan</NavDropdown.Item>
+							<NavDropdown.Divider/>
+							<NavDropdown.Item>Set Default</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
 					<Nav>
-						<Nav.Link href="#deets">Hello [User]</Nav.Link>
-						<Nav.Link href="#login">Login</Nav.Link>
-						<Nav.Link href="#signup">Sign Up</Nav.Link>
+						<Nav.Link>Hello [Test User]!</Nav.Link>
 						<HeaderCartButton onClick={props.onClick}/>
-						{/* <button onClick={props.onClick}>
-						<Nav.Link eventKey={2} href="#cart">
-							Cart
-						</Nav.Link>
-						</button> */}
 					</Nav>
 				</Navbar.Collapse>
 				</Container>

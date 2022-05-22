@@ -15,13 +15,19 @@ function App() {
   const hideCartHandler = () => {
     setCartIsShown(false);
   };
-  
+
+  const [hideJumbotron, setHideJumbotron] = useState(false);
+
+  const hideJumbotronHandler = () => {
+    setHideJumbotron(true);
+  };
+
   return (
     <Fragment>
       <CartProvider>
         {cartIsShown && <Cart onClose={hideCartHandler}/>}
         <Header onClick={showCartHandler}/>
-        <Jumbotron/>
+        {!hideJumbotron && <Jumbotron onClick={hideJumbotronHandler}/>}
         <Products/>
       </CartProvider>
     </Fragment>
