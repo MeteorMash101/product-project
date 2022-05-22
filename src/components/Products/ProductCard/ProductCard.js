@@ -24,6 +24,18 @@ const ProductCard = (props) => {
 		case "GREEN":
 			colorCSS = classes.greenCard
 			break;
+		case "PURPLE":
+			colorCSS = classes.purpleCard
+			break;
+		case "ORANGE":
+			colorCSS = classes.orangeCard
+			break;
+		case "PINK":
+			colorCSS = classes.pinkCard
+			break;
+		case "GREY":
+			colorCSS = classes.greyCard
+			break;
 		default:
 			// safety, same as red.
 			colorCSS = classes.redCard
@@ -31,10 +43,10 @@ const ProductCard = (props) => {
 
 	const addToCartHandler = () => {
 		cartCtx.addItem({
-		  id: props.id,
-		  name: props.name,
-		  amount: 1, // for now, default to 1 only.
-		  price: priceCtx.colorToPrice.get(props.color)
+			id: props.id,
+			name: props.name,
+			amount: 1, // for now, default to 1 only.
+			price: priceCtx.colorToPrice.get(props.color)
 		});
 	};
 
@@ -50,7 +62,7 @@ const ProductCard = (props) => {
 	return (
 		<Fragment>
 			{infoIsShown && <MoreInfo onClose={hideInfoHandler}/>}
-			<Card text='white' className={colorCSS}>
+			<Card text='white' className={classes.card} id={colorCSS}>
 			<Card.Img variant="top" src={productLogo}/>
 			<Card.Body>
 				<Card.Title> <ProductSpecs name={props.name} color={props.color}/> </Card.Title>

@@ -1,38 +1,41 @@
-.blueCard {
-    width: '5rem';
-    background: blue;
-    border-radius: 25px;
-    margin: 15px;
-    max-width: 20%;
-    max-height: 10%;
-}
-
-.redCard {
-    width: '5rem';
-    border-radius: 25px;
-    margin: 15px;
-    max-width: 20%;
-    max-height: 10%;
+#redCard {
     background: red;
 }
 
-.yellowCard {
-    width: '5rem';
-    border-radius: 25px;
-    margin: 15px;
-    max-width: 20%;
-    max-height: 10%;
+#yellowCard {
     background: yellow;
 }
 
+#blueCard {
+    background: blue;
+}
 
-.greenCard {
+#greenCard {
+    background: green;
+}
+
+#purpleCard {
+    background: purple;
+}
+
+#orangeCard {
+    background: orange;
+}
+
+#pinkCard {
+    background: pink;
+}
+
+#greyCard {
+    background: grey
+}
+
+.card {
     width: '5rem';
     border-radius: 25px;
     margin: 15px;
     max-width: 20%;
     max-height: 10%;
-    background: green;
 }
 
 .cardTitle {

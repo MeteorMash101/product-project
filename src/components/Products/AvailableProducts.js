@@ -49,7 +49,7 @@ const AvailableProducts = (props) => {
 			id: 'p8',
 			name: 'Product 8',
 			description: 'As brown as...you know what.',
-			color: 'BROWN',
+			color: 'GREY',
 		},
 	]
 

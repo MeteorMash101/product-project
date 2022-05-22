@@ -11,7 +11,7 @@ const defaultPriceState = {
         ["PURPLE", 80],
         ["ORANGE", 50],
         ["PINK", 25],
-        ["BROWN", 10],
+        ["GREY", 10],
     ]),
 };
 
